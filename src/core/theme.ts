@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-const pokedexTheme = createTheme({
+const owmTheme = createTheme({
     palette: {
       mode: "light",
       text: {
@@ -49,4 +49,4 @@ const pokedexTheme = createTheme({
     }
   });
 
-  export default pokedexTheme;
+  export default owmTheme;
