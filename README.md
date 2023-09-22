@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+## Setup Project
+1. lone this repository to your local machine
+` 
+  git clone https://github.com/ge0vx/pokedex-frontend.git
+`
 
 ## Available Scripts
 
