@@ -47,9 +47,8 @@ function useFetch<T = unknown>(
           ...options
         })
         if (response.ok) {
-          const data = (await response.json()) as T
-          const formattedData = formatReponse(responseType, data)
-          dispatch({ type: 'success', payload: formattedData })
+          const data = (await response.json()) as T;
+          dispatch({ type: 'success', payload: data })
         } else {
           // eslint-disable-next-line no-console
           console.error(response.statusText)
@@ -69,18 +68,6 @@ function useFetch<T = unknown>(
   }, [url, JSON.stringify(options)])
 
   return { ...state }
-}
-
-function formatReponse(responseType: string | undefined, data: any): any{
-  if(responseType === 'pokemon'){
-    const newData = {
-      results: [
-        {name: data?.species?.name, url: data?.species?.url},
-      ]
-    }
-    return newData;
-  }
-  return data;
 }
 
 export default useFetch

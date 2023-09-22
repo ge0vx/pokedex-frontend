@@ -3,11 +3,9 @@ export const simpleListColumns = [
       accessorKey: 'name',
       header: 'Pokemon',
     },
-    /*
     {
-      accessorKey: 'url',
-      header: 'URL',
+      accessorKey: 'default_sprite',
+      header: 'Image',
     }
-    */
   ]
   

@@ -7,10 +7,9 @@ import Search from "../../components/Search";
 import useFetch from "../../core/hooks/useFetch";
 import { pokemonApiResponse } from "../../core/types";
 import { simpleListColumns } from "./simpleListColumns";
-import {pokemonApi} from "../../core/consts"
+import { extPokemonApi} from "../../core/consts"
 import { PokemonContext } from '../../context/pokemonContext';
 import { PokemonContextType } from '../../context/types';
-import { v4 } from "uuid";
 
 function SearchResults() {
   const { userIdContext } = useContext(PokemonContext) as PokemonContextType;
@@ -18,7 +17,7 @@ function SearchResults() {
   const [searchInput, setSearch] = useState<string>("");
   const [query, setQuery] = useState<string>("");
   const { data, error, loading } = useFetch<pokemonApiResponse | undefined>(
-    query ? `${pokemonApi}${query}` : undefined,
+    query ? `${extPokemonApi}${query}` : undefined,
     {
       method: "GET",
     },
@@ -26,14 +25,14 @@ function SearchResults() {
   );
 
   useEffect(()=>{
-    setQuery('pokemon?limit=10&offset=0')
+    setQuery('/pokemon')
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const fetchResults = () => {
     //does not allow to search if searchInput is empty
     if (!searchInput) return;
-    const urlParams = `pokemon/${searchInput}`
+    const urlParams = `/pokemon?pokemon_name=${searchInput}`
     setQuery(urlParams);
   };
 
@@ -85,7 +84,10 @@ function SearchResults() {
             <Typography textAlign="center">Loading...</Typography>
           )}
           {!loading && !!data?.results?.length && (
-            <Table data={data?.results} columns={simpleListColumns} addtionalData={userIdContext}/>
+            <>
+              <Typography textAlign="center">Click on a Pokemon name to add you to your favorites!</Typography>
+              <Table data={data?.results} columns={simpleListColumns} addtionalData={userIdContext}/>
+            </>
           )}
           {!loading && data?.results?.length === 0 && (
             <Typography textAlign="center">No Results</Typography>
