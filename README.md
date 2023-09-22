@@ -12,6 +12,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ` 
   yarn && yarn start
 `
+You will the project running:
+
+![alt text](public/logo512.png "preview")
 
 ## Available Scripts
 
