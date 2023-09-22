@@ -1,10 +1,24 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+## Setup Project
+1. Clone this repository to your local machine
+` 
+  git clone https://github.com/ge0vx/pokedex-frontend.git
+`
+
+2. Inside the project forder you can run the project folliwing the nexrt commands:
+` 
+  yarn && yarn start
+`
+You will the project running:
+
+![alt text](preview/Screenshot_2023-09-22_12-07-06.png "preview")
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run to install dependencies and run the porject:
 ### `yarn`
 ### `yarn start`
 
