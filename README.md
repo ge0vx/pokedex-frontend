@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `
 You will the project running:
 
-![alt text](public/logo512.png "preview")
+![alt text](preview/Screenshot_2023-09-22_12-07-06.png "preview")
 
 ## Available Scripts
 
